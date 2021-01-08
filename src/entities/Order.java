@@ -65,4 +65,11 @@ public class Order {
 		return total;
 	}
 
+	@Override
+	public String toString() {
+		return "Order [moment=" + moment + ", status=" + status + ", client=" + client + ", items=" + items + "]";
+	}
+	
+	
+
 }

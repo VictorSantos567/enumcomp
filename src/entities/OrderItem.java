@@ -43,4 +43,10 @@ public class OrderItem {
 		return price * quantity;
 	}
 
+	@Override
+	public String toString() {
+		return "OrderItem [quantity=" + quantity + ", price=" + price + ", product=" + product + "]";
+	}
+	
+	
 }
