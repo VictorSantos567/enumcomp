@@ -19,7 +19,7 @@ public class Program {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-		OrderItem orderItem;
+		OrderItem orderItem = null;
 
 		System.out.println("Enter cliente data: ");
 		System.out.print("Name: ");
@@ -35,28 +35,31 @@ public class Program {
 		String orderStatus = sc.nextLine();
 		Order order = new Order(new Date(), OrderStatus.valueOf(orderStatus),
 				new Client(clientName, clientEmail, birthDate));
-		System.out.print("How many items to this order ?");
-		int items = sc.nextInt();
+		System.out.print("How many items to this order ? ");
+		int n = sc.nextInt();
 
-		for (int i = 1; i <= items; i++) {
-			System.out.println("");
+		for (int i = 1; i <= n; i++) {
 			System.out.println("Enter " + i + " item data:");
 			System.out.print("Product name: ");
 			String productname = sc.nextLine();
-			sc.nextLine();
+			sc.next();
 			System.out.print("Product price: ");
 			double productprice = sc.nextDouble();
 			System.out.print("Quantity: ");
 			int productQuantity = sc.nextInt();
 			orderItem = new OrderItem(productQuantity, productprice, new Product(productname, productprice));
 			order.addItem(orderItem);
+
 		}
 
+		System.out.println();
 		System.out.println("ORDER SUMMARY: ");
-		System.out.println(order.toString());
+		System.out.println(order.toString());;
 
 		System.out.println("ORDER items: ");
-	
+
+		order.toString2();
+
 		System.out.print("Total price: $" + order.total());
 		sc.close();
 	}

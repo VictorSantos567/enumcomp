@@ -1,6 +1,7 @@
 package entities;
 
 import java.util.List;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -11,6 +12,7 @@ public class Order {
 	private OrderStatus status;
 	private Client client;
 	private List<OrderItem> items = new ArrayList<>();
+	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 
 	public Order() {
 	}
@@ -65,11 +67,13 @@ public class Order {
 		return total;
 	}
 
-	@Override
 	public String toString() {
-		return "Order [moment=" + moment + ", status=" + status + ", client=" + client + ", items=" + items + "]";
+		return "Order moment: " + sdf.format(moment) + "\n Order status: " + status + "\n client: " + client;
 	}
 	
-	
-
+	public void toString2() {
+		for (OrderItem orderItem : items) {
+			System.out.println(orderItem.toString());
+		}
+	}
 }

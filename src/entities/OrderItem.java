@@ -5,10 +5,10 @@ public class OrderItem {
 	private Integer quantity;
 	private Double price;
 	private Product product;
-	
+
 	public OrderItem() {
 	}
-	
+
 	public OrderItem(Integer quantity, Double price, Product product) {
 		this.quantity = quantity;
 		this.price = price;
@@ -43,10 +43,8 @@ public class OrderItem {
 		return price * quantity;
 	}
 
-	@Override
 	public String toString() {
-		return "OrderItem [quantity=" + quantity + ", price=" + price + ", product=" + product + "]";
+		return getProduct() + ", Quantity: " + quantity + ", Subtotal: $" + subTotal();
 	}
-	
-	
+
 }
