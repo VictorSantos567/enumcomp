@@ -41,8 +41,8 @@ public class Program {
 		for (int i = 1; i <= n; i++) {
 			System.out.println("Enter " + i + " item data:");
 			System.out.print("Product name: ");
+			sc.nextLine();
 			String productname = sc.nextLine();
-			sc.next();
 			System.out.print("Product price: ");
 			double productprice = sc.nextDouble();
 			System.out.print("Quantity: ");
@@ -54,13 +54,14 @@ public class Program {
 
 		System.out.println();
 		System.out.println("ORDER SUMMARY: ");
-		System.out.println(order.toString());;
+		System.out.println(order.toString());
+		;
 
 		System.out.println("ORDER items: ");
 
 		order.toString2();
 
-		System.out.print("Total price: $" + order.total());
+		System.out.print("Total price: $" + String.format("%.2f%n", order.total()));
 		sc.close();
 	}
 

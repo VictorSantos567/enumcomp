@@ -28,8 +28,4 @@ public class Product {
 		this.price = price;
 	}
 
-	public String toString() {
-		return name + ", $" + String.format("%.2f%n", price) + " ";
-	}
-
 }
